@@ -44,6 +44,9 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Bio.Core, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NetBio.Core.3.0.0-alpha\lib\netstandard2.0\Bio.Core.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -64,7 +67,15 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Analysis.vb" />
+    <Compile Include="BlastManipulation.vb" />
+    <Compile Include="BlastSeq.vb" />
     <Compile Include="Class1.vb" />
+    <Compile Include="Compressed\Compressed.vb" />
+    <Compile Include="Console.vb" />
+    <Compile Include="Export.vb" />
+    <Compile Include="Filter.vb" />
+    <Compile Include="Import.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -80,6 +91,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Parsers.vb" />
+    <Compile Include="Sort.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -99,6 +112,21 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Szunyi.Common\Szunyi.Common\Szunyi.Common.vbproj">
+      <Project>{d2d39939-3eac-4599-bf5b-41228d7e3bbf}</Project>
+      <Name>Szunyi.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Szunyi.IO\Szunyi.IO\Szunyi.IO.vbproj">
+      <Project>{053ecc71-e49d-4254-9a5a-7d36b3f50d37}</Project>
+      <Name>Szunyi.IO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Szunyi.Math\Szunyi.Math\Szunyi.Math.vbproj">
+      <Project>{e7756283-90b7-4450-a131-b7372f915532}</Project>
+      <Name>Szunyi.Math</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
